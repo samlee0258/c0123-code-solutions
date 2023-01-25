@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.big-button {
+  height: 60px;
+  width: 210px;
+  font-size: x-large;
+}
+
+.big-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+table.striped thead > tr {
+  background-color: black;
+  color: white;
+}
+
+table.striped tbody > tr:nth-child(odd) {
+  background-color: lightgray;
+}
