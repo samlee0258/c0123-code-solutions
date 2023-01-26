@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  src: url("BrandonGrotesque-Regular.woff2") format("woff2");
+}
+
+h3,
+label,
+button {
+  text-transform: uppercase;
+}
+
+h3 {
+  color: rgb(236 93 88);
+  text-align: center;
+  font-size: normal;
+}
+
+form {
+  width: 45%;
+  margin: auto;
+}
+
+label {
+  font-family: "Brandon Grotesque", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url("BrandonGrotesque-Medium.woff2") format("woff2");
+  margin-left: 0.75rem;
+  font-size: small;
+}
+
+input {
+  font-family: AtlasGrotesk, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: url("AtlasGrotesk-Light-Web.woff2") format("woff2");
+  padding-left: 10px;
+}
+
+input,
+select {
+  height: 40px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ec5d57;
+  color: white;
+  border-radius: 30px;
+  border: transparent;
+  height: 30px;
+  width: 85px;
+  padding: 5px;
+  margin: auto;
+}
+
+select {
+  background-color: #f3f3f3;
+}
+
+.button {
+  text-align: right;
+}
