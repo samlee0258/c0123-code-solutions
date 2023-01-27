@@ -1,0 +1,107 @@
+body {
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1,
+h3,
+button {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  flex-basis: 50%;
+}
+
+.col-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.col-two-third {
+  flex-basis: calc(200% / 3);
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.m-top {
+  margin-top: 20px;
+}
+
+.m-right-30 {
+  margin-right: 30px;
+}
+
+.m-left-30 {
+  margin-left: 30px;
+}
+
+.m-top-20 {
+  margin-top: 20px;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.title-p {
+  font-size: small;
+  color: rgb(136 136 136);
+  line-height: 2;
+  padding: 0 8rem;
+}
+
+.description {
+  font-size: small;
+  color: rgb(136 136 136);
+  line-height: 2;
+}
+
+.learn-more-bttn {
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 8px 2.5rem;
+  background-color: white;
+  border: 2px solid rgb(209 76 69);
+  color: rgb(209 76 69);
+}
+
+.main-header {
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 0;
+}
