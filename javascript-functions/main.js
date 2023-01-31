@@ -1,13 +1,13 @@
 function convertMinutestoSeconds(minutes) {
-  var product = minutes * 60;
-  return product;
+  var seconds = minutes * 60;
+  return seconds;
 }
 var convertMinutestoSecondsResults = convertMinutestoSeconds(5);
 console.log('convertMinutestoSecondsResults:', convertMinutestoSecondsResults);
 
 function greet(name) {
-  var firstName = name;
-  return 'Hey, ' + firstName;
+  var greeting = 'Hey, ' + name;
+  return greeting;
 }
 var greetResult = greet('Beavis');
 console.log('greetResult:', greetResult);
