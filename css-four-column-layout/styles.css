@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Barlow, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+section > p {
+  font-size: x-small;
+}
+
+section > h3 {
+  font-size: small;
+}
+
+.title > h2 {
+  font-weight: 700px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-one-fourth {
+  flex-basis: calc(100% / 4);
+}
+
+.center {
+  text-align: center;
+}
+
+.icon-container {
+  margin: 0 auto;
+  width: 50px;
+}
+
+.icon-container > img {
+  height: auto;
+  width: 50px;
+}
+
+.info-container {
+  text-align: center;
+}
