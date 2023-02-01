@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-one-fifth {
+  flex-basis: calc(100% / 5);
+}
+
+.center {
+  text-align: center;
+}
+
+.img-container {
+  margin: 5px 6px;
+}
+
+.fit-content {
+  object-fit: cover;
+  height: 225px;
+  width: 140px;
+}
+
+.info {
+  font-size: x-small;
+}
+
+.border-left {
+  border-left-style: solid;
+  padding-left: 5px;
+}
+
+.price {
+  text-decoration: none;
+  background-color: rgb(255 242 231);
+}
+
+.light-g {
+  color: lightgray;
+}
