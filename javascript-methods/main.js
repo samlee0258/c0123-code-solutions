@@ -5,7 +5,7 @@ var maximumValue = Math.max(five, twenty, ninetySix);
 console.log('maximumValue:', maximumValue);
 
 var heroes = ['Spiderman', 'Batman', 'Ironman', 'Shang-Chi'];
-var randomNumber = Math.random(heroes);
+var randomNumber = Math.random();
 randomNumber *= heroes.length;
 var randomIndex = Math.floor(randomNumber);
 console.log('randomIndex:', randomIndex);
