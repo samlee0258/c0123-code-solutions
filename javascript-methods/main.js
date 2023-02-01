@@ -27,10 +27,10 @@ var library = [
     author: 'J.D. Salinger'
   }
 ];
-var lastBook = library.pop(2);
+var lastBook = library.pop();
 console.log('lastBook:', lastBook);
 
-var firstBook = library.shift(0);
+var firstBook = library.shift();
 console.log('firstBook:', firstBook);
 
 var js = {
