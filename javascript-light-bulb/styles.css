@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 90px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 20% auto;
+}
+
+.on {
+  background-color: rgb(254 249 241);
+}
+
+.off {
+  background-color: black;
+}
+
+.on-button {
+  box-shadow: 0 0 10px 1px rgb(250 234 132);
+  background-color: rgb(250 234 132);
+}
+
+.off-button {
+  background-color: rgb(37 37 37);
+}
