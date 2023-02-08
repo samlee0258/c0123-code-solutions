@@ -25,6 +25,10 @@ section {
   transition: 0.5s;
 }
 
+.custom-button:hover {
+  background-color: red;
+}
+
 .card-wrapper {
   text-align: center;
 }
@@ -41,14 +45,10 @@ section {
   transition: 0.5s;
 }
 
-.card > img {
-  width: 100%;
-}
-
-.custom-button:hover {
-  background-color: red;
-}
-
 .card:hover {
   transform: scale(1.1);
+}
+
+.card > img {
+  width: 100%;
 }
