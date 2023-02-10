@@ -13,8 +13,9 @@ function pick(source, keys) {
   var presentKeys = {};
   for (var key in source) {
     for (var index = 0; index < keys.length; index++) {
-      if (key === keys[index]) {
-        presentKeys = key;
+      var property = keys[index];
+      if (key === property) {
+        presentKeys.property = key;
       }
     }
   }
