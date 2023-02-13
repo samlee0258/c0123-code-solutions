@@ -2,22 +2,20 @@
 /*
   - define a function named pick with two parameters "source" and "keys"
   - assign an empty object to a variable
-  - create a for in loop to loop through the object
-    - create a for loop to loop through the keys array
-      - if the key in object is strictly equal to the index in array push the key
-        and the value into the empty object
-  - return output object
+  - create a for loop to loop through the keys array
+    - assign the index at keys to a variable named key
+    - if the key at source is not undefined
+      - assign key at source to key at presentObj
+  - return presentObj
 */
 
 function pick(source, keys) {
-  var presentKeys = {};
-  for (var key in source) {
-    for (var index = 0; index < keys.length; index++) {
-      var property = keys[index];
-      if (key === property) {
-        presentKeys.property = key;
-      }
+  var presentObj = {};
+  for (var index = 0; index < keys.length; index++) {
+    var key = keys[index];
+    if (source[key] !== undefined) {
+      presentObj[key] = source[key];
     }
   }
-  return presentKeys;
+  return presentObj;
 }
