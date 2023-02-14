@@ -6,10 +6,8 @@
 
 function defaults(target, source) {
   for (var key in source) {
-    if (key === 'foo' || key === 'baz') {
-      delete source[key];
+    if (target[key] !== source[key]) {
+      target[key] = source[key];
     }
   }
-  var outputTarget = Object.assign(target, source);
-  return outputTarget;
 }
