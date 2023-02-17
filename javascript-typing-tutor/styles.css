@@ -3,31 +3,31 @@
 }
 
 body {
+  font-family: "Courier Prime", monospace;
+  font-size: x-large;
+  font-weight: 700px;
   margin: auto;
-}
-
-span {
-  white-space: pre;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-full {
-  flex-basis: 100%;
 }
 
 .center {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 6rem 0;
-  padding: 8rem 0;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.incorrect {
+  color: red;
+}
+
+.correct {
+  color: rgb(24 205 26);
+}
+
+.underline {
+  border-bottom: 2px solid black;
+}
+
+.underline-red {
+  border-bottom: 2px solid red;
 }
