@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier Prime", monospace;
+  font-size: x-large;
+  font-weight: 700px;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.incorrect {
+  color: red;
+}
+
+.correct {
+  color: rgb(24 205 26);
+}
+
+.underline {
+  border-bottom: 2px solid black;
+}
+
+.underline-red {
+  border-bottom: 2px solid red;
+}
