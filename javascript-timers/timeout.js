@@ -1,5 +1,6 @@
+var $message = document.querySelector('.message');
+
 function greeting() {
-  var $message = document.querySelector('.message');
   $message.textContent = 'Hello There';
 }
 
