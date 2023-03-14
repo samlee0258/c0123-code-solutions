@@ -1,0 +1,152 @@
+    1  cd ..
+    2  mv c0123-code-solutions/ xc0123-code-solutions
+    3  $ git clone --bare git@github.com:samlee0258/rc0123-code-solutions.git
+    4  git clone --bare git@github.com:samlee0258/rc0123-code-solutions.git
+    5  cd rc0123-code-solutions.git/
+    6  git push --mirror git@github.com:samlee0258/c0123-code-solutions.git
+    7  cd ..
+    8  rm -rf rc0123-code-solutions.git/
+    9  ls
+   10  git clone git@github.com:samlee0258/c0123-code-solutions.git
+   11  cd c0123-code-solutions/
+   12  git status
+   13  git pull origin main
+   14  git branch es6-const-let
+   15  git branch --list
+   16  git switch es6-const-let
+   17  git status
+   18  git add es6-const-let
+   19  git status
+   20  git commit -m "Completed es6-const-let exercise."
+   21  git push origin es6-const-let
+   22  git switch main
+   23  git branch es6-template-literals
+   24  git branch --list
+   25  git switch es6-template-literals
+   26  git status
+   27  git add es6-template-literals
+   28  git status
+   29  git commit -m "Completed es6-template-literals exercise."
+   30  git status
+   31  git push origin es6-template-literals
+   32  git status
+   33  git status
+   34  git add es6-template-literals
+   35  git status
+   36  git commit -m "Removed commented out code."
+   37  git push origin es6-template-literals
+   38  git switch main
+   39  git pull origin main
+   40  git status
+   41  git branch --list
+   42  git status
+   43  git pull origin main
+   44  git branch es6-destructuring
+   45  git branch --list
+   46  git switch es6-destructuring
+   47  git status
+   48  git add es6-destructuring
+   49  git status
+   50  git commit -m "Completed es6-descructuring exercise."
+   51  git push origin es6-descructuring
+   52  git reset --soft HEAD~
+   53  git status
+   54  git commit -m "Completed es6-destructuring exercise."
+   55  git push origin es6-destructuring
+   56  git switch main
+   57  git status main
+   58  git pull origin main
+   59  git status
+   60  git status main
+   61  git pull origin main
+   62  git branch --list
+   63  git branch es6-arrow-functions
+   64  git branch --list
+   65  git switch es6-arrow-functions
+   66  git status
+   67  git add es6-arrow-functions
+   68  git status
+   69  git add .eslintrc
+   70  git status
+   71  git commit -m "Completed es6-arrow-functions exercise."
+   72  git push origin es6-arrow-functions
+   73  git switch main
+   74  git status main
+   75  git pull origin main
+   76  git status main
+   77  git branch command-line-basics
+   78  git branch --list
+   79  git switch command-line-basics
+   80  cd command-line-basics/
+   81  man man
+   82  man cat
+   83  cat laziness.txt
+   84  cat impatience.txt
+   85  cat hubris.txt
+   86  cat laziness.txt impatience.txt hubris.txt
+   87  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   88  cat three-virtues.txt
+   89  man ls
+   90  ls
+   91  ls -a
+   92  ls -F
+   93  ls lfz-staff/
+   94  ls lfz-staff/ -a
+   95  ls lfz-staff/ -F
+   96  ls lfz-staff/ -aF
+   97  ls -aF lfz-staff > lfz-staff/contents.txt
+   98  cat lfz-staff/contents.txt
+   99  man pwd
+  100  pws
+  101  pwd
+  102  pwd i-was-here.txt
+  103  pwd > i-was-here.txt
+  104  ls
+  105  cat i-was-here.txt
+  106  man echo
+  107  echo 
+  108  echo 'Hello, World!
+'
+  109  echo 'Hello, World!'
+  110  echo 'Hello, World!' > hello.txt
+  111  ls
+  112  cat hello.txt
+  113  man touch
+  114  touch tag-youre-it.txt
+  115  touch snoot/boop.txt
+  116  ls snoot/
+  117  touch
+  118  ls
+  119  man mkdir
+  120  man mkdir
+  121  mkdir parent
+  122  ls
+  123  ls parent/
+  124  ls
+  125  ls -aF
+  126  mkdir -p 
+  127  mkdir -p parent/child/grandchild
+  128  touch parent/child/grandchild/.gitkeep
+  129  ls -a
+  130  ls -a .gitkeep
+  131  ls -aF
+  132  ls -a parent/
+  133  ls -a parent/child/grandchild/
+  134  ls -a parent/child/grandchild
+  135  main mv
+  136  man mv
+  137  mv pokiemans pokemon
+  138  ls
+  139  man rm
+  140  rm lol.txt
+  141  ls
+  142  rm -r kill-me/
+  143  ls
+  144  man cp
+  145  cp and-then.txt no-and-then.txt
+  146  ls
+  147  cat and-then.txt no-and-then.txt
+  148  man history
+  149  man history
+  150  history 
+  151  history > command-history.txt
