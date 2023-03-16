@@ -28,3 +28,8 @@ const product = numbers.reduce(
   (num1, num2) => num1 * num2, startingNum
 );
 console.log('product:', product);
+
+
+const totalBalance = account.reduce((balance, transaction) => {
+  ? balance: transaction.type
+});
