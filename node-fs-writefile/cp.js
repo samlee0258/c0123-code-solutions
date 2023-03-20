@@ -2,18 +2,11 @@ import { readFile } from 'node:fs/promises'
 import { writeFile } from 'node:fs/promises'
 
 const copiedNote = process.argv[2];
+const destination = process.argv[3];
 
-writeFile('copy-of-note.txt', copiedNote, 'utf-8')
+readFile(copiedNote)
+  .then((data) => writeFile(destination, data))
   .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
-
-readFile('copy-of-note.txt', 'utf-8')
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error(error);
+    console.error(error.message);
     process.exit(1);
   });
