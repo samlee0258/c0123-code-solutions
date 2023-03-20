@@ -31,5 +31,17 @@ console.log('product:', product);
 
 
 const totalBalance = account.reduce((balance, transaction) => {
-  ? balance: transaction.type
-});
+  if (transaction.type === 'deposit') {
+    return balance + transaction.amount;
+  } else if (transaction.type === 'withdrawal') {
+    return balance - transaction.amount;
+  } else {
+    return console.error('Invalid transaction.')
+  }
+}, 0);
+
+console.log('balance:', totalBalance);
+
+const composite = traits.reduce((accumulator, currentValue) => ({ ...accumulator, ...currentValue }));
+
+console.log('composite:', composite);
