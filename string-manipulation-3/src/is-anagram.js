@@ -7,17 +7,20 @@
 */
 
 function isAnagram(firstString, secondString) {
-  firstString = firstString.split(' ').join('');
-  secondString = secondString.split(' ').join('');
-  var equal = null;
-  for (var i = 0; i < firstString.length; i++) {
-    for (var index = 0; index < secondString.length; index++) {
-      if (firstString[i] !== secondString[index]) {
-        equal = false;
+  const firstStrObj = {};
+  const secondStrObj = {};
+  let value = false;
+
+  for (let i = 0; i < firstString.length; i++) {
+    firstStrObj[firstString[i]] = i;
+    for (let k = 0; k < secondString.length; k++) {
+      secondStrObj[secondString[k]] = k;
+      if (Object.values(firstStrObj)[i] === Object.values(secondStrObj)[k]) {
+        value = true;
       } else {
-        equal = true;
+        value = false;
       }
     }
   }
-  return equal;
+  return value;
 }
