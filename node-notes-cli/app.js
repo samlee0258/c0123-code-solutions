@@ -1,7 +1,7 @@
-import { read } from "./read-notes.js";
-import { create } from "./add-note.js";
-import { remove } from "./delete-note.js";
-import { update } from "./update-note.js";
+import { read } from './read-notes.js';
+import { create } from './add-note.js';
+import { remove } from './delete-note.js';
+import { update } from './update-note.js';
 
 const [, , operator] = process.argv;
 

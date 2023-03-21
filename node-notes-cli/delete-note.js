@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 
 export const remove = (id) => {
@@ -9,13 +9,13 @@ export const remove = (id) => {
   if (parsedData.notes[numberProp]) {
     delete parsedData.notes[numberProp];
   } else {
-    console.error('ID does not exist!');
+    return console.error('ID does not exist!');
   }
 
-  const stringifyData = JSON.stringify(parsedData, null, 2)
+  const stringifyData = JSON.stringify(parsedData, null, 2);
   writeFile('./data.json', stringifyData, 'utf8')
     .catch((error) => {
       console.error(error);
       process.exit(1);
-    })
-}
+    });
+};
