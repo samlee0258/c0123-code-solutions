@@ -20,7 +20,7 @@ app.get('/api/notes/:id', (req, res) => {
   const parsedData = readFile();
   console.log('parsedData:', parsedData);
   if (!parsedData.notes[id]) {
-    return res.status(404).json({ error: 'Note does not exist!' });
+    return res.status(404).json({ error: `Note ${id} does not exist!` });
   }
   res.status(200).json(parsedData.notes[id]);
 });
