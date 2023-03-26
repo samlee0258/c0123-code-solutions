@@ -24,8 +24,6 @@ app.get('/api/notes/:id', async (req, res) => {
   try {
     const id = Number(req.params.id);
     const parsedData = await read();
-    console.log('isInteger:', !Number.isInteger(id));
-    console.log('parsedData:', parsedData);
     if (id < 0 || !Number.isInteger(id)) {
       return res.status(400).json({ error: 'Must be a positive integer!' });
     }
@@ -83,9 +81,53 @@ app.post('/api/notes', async (req, res) => {
 // step 3 and 4 can be a Promise using await .then would be the success and .catch would be the error.
 // step 1 and 2 is similar to getting individual note steps 1 and 2
 
+app.delete('/api/notes/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    const parsedData = await read();
+    if (id < 0 || !Number.isInteger(id)) {
+      return res.status(400).json({ error: 'Must be a positive integer!' });
+    }
+    if (!parsedData.notes[id]) {
+      return res.status(404).json({ error: `Note ${id} does not exist!` });
+    }
+    delete parsedData.notes[id];
+    await write(parsedData);
+    res.status(204);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
+  }
+});
+
 // Update note:
 // PUT request to endpoint /api/notes/:id
 // if not positive integer or no req.body content property throw error 400
 // if id and content doesnt match note id throw error 404
 // step 3 and 4 can be a Promise using await similar to Delete
+
+app.put('/api/notes/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    const parsedData = await read();
+    const text = req.body;
+    const newContent = req.body.content;
+    if (!Object.hasOwn(text, 'content')) {
+      return res.status(400).json({ error: 'content is a required field' });
+    }
+    if (id < 0 || !Number.isInteger(id)) {
+      return res.status(400).json({ error: 'Must be a positive integer!' });
+    }
+    if (!parsedData.notes[id]) {
+      return res.status(404).json({ error: `Note ${id} does not exist!` });
+    }
+    parsedData.notes[id].content = newContent;
+    await write(parsedData);
+    res.status(200).json(text);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
+  }
+});
+
 app.listen(port, () => console.log(`Listening on port: ${port}!`));
