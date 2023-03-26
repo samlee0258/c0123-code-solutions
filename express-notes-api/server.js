@@ -20,27 +20,37 @@ const write = async (parsedData) => {
   await writeFile('data.json', JSON.stringify(parsedData, null, 2));
 };
 // Get individual note:
-app.get('/api/notes/:id', (req, res) => {
-  const id = Number(req.params.id);
-  const parsedData = read();
-  console.log('isInteger:', !Number.isInteger(id));
-  console.log('parsedData:', parsedData);
-  if (id < 0 || !Number.isInteger(id)) {
-    return res.status(400).json({ error: 'Must be a positive integer!' });
+app.get('/api/notes/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    const parsedData = await read();
+    console.log('isInteger:', !Number.isInteger(id));
+    console.log('parsedData:', parsedData);
+    if (id < 0 || !Number.isInteger(id)) {
+      return res.status(400).json({ error: 'Must be a positive integer!' });
+    }
+    if (!parsedData.notes[id]) {
+      return res.status(404).json({ error: `Note ${id} does not exist!` });
+    }
+    res.status(200).json(parsedData.notes[id]);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
   }
-  if (!parsedData.notes[id]) {
-    return res.status(404).json({ error: `Note ${id} does not exist!` });
-  }
-  res.status(200).json(parsedData.notes[id]);
 });
 // Get all notes:
-app.get('/api/notes', (req, res) => {
-  const parsedData = read();
-  const notesArr = [];
-  for (const key in parsedData.notes) {
-    notesArr.push(parsedData.notes[key]);
+app.get('/api/notes', async (req, res) => {
+  try {
+    const parsedData = await read();
+    const notesArr = [];
+    for (const key in parsedData.notes) {
+      notesArr.push(parsedData.notes[key]);
+    }
+    return res.json(notesArr);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
   }
-  res.json(notesArr);
 });
 
 // Add new note:
