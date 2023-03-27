@@ -8,11 +8,10 @@ app.use(express.json());
 const read = async () => {
   try {
     const data = await readFile('data.json', 'utf8');
-    const parsedData = JSON.parse(data);
-    return parsedData;
+    return JSON.parse(data);
   } catch (err) {
     console.error(err);
-    process.exit(1);
+    status(500).json({ error: 'An unexpected error occurred.' });
   }
 };
 
@@ -33,7 +32,7 @@ app.get('/api/notes/:id', async (req, res) => {
     res.status(200).json(parsedData.notes[id]);
   } catch (err) {
     console.error(err);
-    process.exit(1);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 // Get all notes:
@@ -47,7 +46,7 @@ app.get('/api/notes', async (req, res) => {
     return res.json(notesArr);
   } catch (err) {
     console.error(err);
-    process.exit(1);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
