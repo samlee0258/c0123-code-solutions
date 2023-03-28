@@ -1,24 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import CustomButton from "./CustomButton.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CustomButton text="I" color="green" onCustomClick={(text) => alert(`You clicked on the ${text} button!`)} />
+      <CustomButton text="Fancy" color="red" onCustomClick={(text) => alert(`You clicked on the ${text} button!`)} />
+      <CustomButton text="React" color="lightblue" onCustomClick={(text) => alert(`You clicked on the ${text} button!`)} />
+    </>
   );
 }
 
