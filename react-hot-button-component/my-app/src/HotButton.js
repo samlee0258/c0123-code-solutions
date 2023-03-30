@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './HotButton.css';
 
 export default function HotButton({ text, color }) {
-  const [clicks, setClicks] = useState(0);
+  // we are creating a state called clicks and initializing it to null with setClicks as the setter.
+  const [clicks, setClicks] = useState(null);
+  // passes an anynomous callback function where if clicks is truthy run the console.log
+  // this useEffect will only run when the state clicks is changed
+  useEffect(() => {
+    clicks && console.log('clicks:', clicks)
+  }, [clicks]);
 
-  console.log('useState:', clicks);
   function changeTemperature() {
-    setClicks(clicks + 1);
+    // setClicks is being called with a callback function with param prevClicks
+    // prevClicks is added by 1 and the result of that expressions is being returned out of the callback function and used by setClicks
+    // prevClicks represents clicks
+    setClicks((prevClicks) => prevClicks + 1);
   }
+
   if (clicks <= 3) {
     color = 'blue';
   } else if (clicks <= 6) {
@@ -23,9 +32,11 @@ export default function HotButton({ text, color }) {
   }
 
   return (
-    <button style={{ backgroundColor: color }}
-            className="hot-button"
-            onClick={ changeTemperature }>
+    <button
+      style={{ backgroundColor: color }}
+      className="hot-button"
+      onClick={changeTemperature}
+    >
       {text}
     </button>
   );
