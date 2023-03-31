@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './HotButton.css';
 
-export default function HotButton({ text, color }) {
+export default function HotButton({ text }) {
   // we are creating a state called clicks and initializing it to null with setClicks as the setter.
-  const [clicks, setClicks] = useState(null);
+  const [clicks, setClicks] = useState(0);
+  console.log('clicks:', clicks);
   // passes an anynomous callback function where if clicks is truthy run the console.log
   // this useEffect will only run when the state clicks is changed
-  useEffect(() => {
-    clicks && console.log('clicks:', clicks)
-  }, [clicks]);
+  // useEffect(() => {
+  //   clicks && console.log('clicks:', clicks)
+  // }, [clicks]);
 
   function changeTemperature() {
     // setClicks is being called with a callback function with param prevClicks
@@ -17,6 +18,7 @@ export default function HotButton({ text, color }) {
     setClicks((prevClicks) => prevClicks + 1);
   }
 
+  let color = '';
   if (clicks <= 3) {
     color = 'blue';
   } else if (clicks <= 6) {
