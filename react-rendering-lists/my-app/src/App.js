@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import PokemonList from "./PokemonList.js";
+
+export const pokedex = [
+  { number: '001', name: 'Bulbasaur' },
+  { number: '004', name: 'Charmander' },
+  { number: '007', name: 'Squirtle' },
+  { number: '025', name: 'Pikachu' },
+  { number: '039', name: 'Jigglypuff' }
+];
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <PokemonList pokedex={pokedex}/>
     </div>
   );
 }
