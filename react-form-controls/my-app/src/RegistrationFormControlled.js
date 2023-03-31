@@ -13,10 +13,10 @@ export default function RegistrationFormControlled({ text }) {
   return (
     <form onSubmit={ handleSubmit }>
       <label>
-        Username: <input type="text" onChange={(e) => setUsername(e.target.value)} />
+        Username: <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </label>
       <label>
-        Password: <input type="password" onChange={(e) => setPassword(e.target.value)} />
+        Password: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </label>
       <button type="submit">
         {text}

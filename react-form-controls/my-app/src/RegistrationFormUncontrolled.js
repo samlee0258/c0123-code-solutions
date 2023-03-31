@@ -11,7 +11,7 @@ export default function RegistrationFormUncontrolled({text}) {
   return (
     <form method="" onSubmit={ handleSubmit }>
       <label>
-        Username: <input name="username" type="text" required={true}/>
+        Username: <input name="username" type="text" required />
       </label>
       <label>
         Password: <input name="password" type="password" />
