@@ -9,7 +9,6 @@ import React, { useState } from 'react';
  */
 export default function Container({ items }) {
   const [current, setCurrent] = useState(0);
-  const [backgroundColor, setBackgroundColor] = useState('white');
 
   return (
     <div>
@@ -17,7 +16,6 @@ export default function Container({ items }) {
       <div>
         <Button text="Prev"
           onClick={() => setCurrent(((current - 1) + items.length) % items.length)}
-          style={() => setBackgroundColor(backgroundColor)}
           />
         <Indicator count={items.length} current={current} setCurrent={setCurrent}/>
         <Button text="Next"
@@ -45,14 +43,14 @@ function Button({ text, onClick, backgroundColor = 'white' }) {
  * An array of buttons.
  * TODO: Highlight only the active button lightblue.
  */
-function Indicator({ count, current, setCurrent, backgroundColor }) {
+function Indicator({ count, current, onSetCurrent, backgroundColor }) {
   const buttons = [];
   for (let i = 0; i < count; i++) {
     buttons.push(
       <Button
         key={i}
         text={i}
-        onClick={() => setCurrent(i)}
+        onClick={() => onSetCurrent(i)}
         backgroundColor={i === current ? 'lightblue' : undefined} />)
   }
   return <div>{buttons}</div>;
