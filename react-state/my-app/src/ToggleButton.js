@@ -9,19 +9,11 @@ export default function ToggleButton({text, color}) {
     setIsClicked(!isClicked);
     console.log('after setter:', isClicked); // false because the data referencing the state hasn't updated.
   }
-  // either returns on line 14 or 22 re-renders the ToggleButton component, re-running the code.
-  if (!isClicked) {
-    return <button
-              color="white"
-              onClick={ handleClick }
-           >
-              {text}
-           </button>;
-  }
 
+  // return on line 22 re-renders the ToggleButton component, re-running the code.
   return (
     <button
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: isClicked ? color : 'white'}}
         onClick={ handleClick }
     >
         {text}
