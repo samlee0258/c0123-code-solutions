@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './HotButton.css';
 
 export default function HotButton({ text }) {
@@ -7,9 +7,9 @@ export default function HotButton({ text }) {
   console.log('clicks:', clicks);
   // passes an anynomous callback function where if clicks is truthy run the console.log
   // this useEffect will only run when the state clicks is changed
-  // useEffect(() => {
-  //   clicks && console.log('clicks:', clicks)
-  // }, [clicks]);
+  useEffect(() => {
+    clicks && console.log('clicks:', clicks)
+  }, [clicks]);
 
   function changeTemperature() {
     // setClicks is being called with a callback function with param prevClicks
