@@ -1,30 +1,52 @@
 import { useState } from "react";
-// import FontAwesomeIcon from 'FontAwesomeIcon';
 
 export default function ValidatedInput() {
   const [password, setPassword] = useState('');
+  const [valid, setValid] = useState(false);
 
-  function validate(value) {
-    const trimmedValue = value.trim();
-    if (!trimmedValue) {
-    return 'A password is required!';
+  const validate = (e) => {
+    const trimmedValue = e.target.value;
+    setPassword(trimmedValue);
+
+    if (trimmedValue === '') {
+      setValid(false);
+    } else if (trimmedValue.length < 8) {
+      setValid(false);
+    } else {
+      setValid(true);
     }
   }
 
-  const error = validate(password);
-
   return (
-    <label> Password
-      <div>
-        <input type="password"
-               required
-               minLength={8}
-               onChange={(e) => setPassword(e.target.value)}
-               value={ password }
-               />
-        {<div>{error}</div>}
-        {/* <FontAwesomeIcon icon="fa-sharp fa-solid fa-xmark" /> */}
-      </div>
-    </label>
+    <div>
+      <label for="password"> Password
+        <div>
+          <input id="password"
+                 type="password"
+                 required
+                 onChange={validate}
+                 value={ password }
+                 className={
+                  password === '' || password.length < 8
+                  ? "form-control is-invalid"
+                  : "form-control is-valid"
+                 }
+                />
+          {password === "" && (
+            <div className="invalid-feedback">
+              A password is required
+            </div>
+          )}
+          {password !== "" && password.length < 8 && (
+            <div className="invalid-feedback">
+              Password must be at least 8 characters long
+            </div>
+          )}
+          {valid && (
+            <div className="valid-feedback">Looks good!</div>
+          )}
+        </div>
+      </label>
+    </div>
   );
 }
