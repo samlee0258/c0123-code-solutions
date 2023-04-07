@@ -58,19 +58,25 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
      *     Create a new signed token with `jwt.sign()`, using the payload and your TOKEN_SECRET
      *     Send the client a 200 response containing the payload and the token.
      */
-    const hashedPassword = await argon2.hash(password);
     const sql = `
       select "userId",
              "hashedPassword"
         from "users"
        where "username" = $1;
     `;
-    if (username && !await argon2.verify(hashedPassword, password)) {
+    const params = [username];
+    const result = await db.query(sql, params);
+    const [user] = result.rows;
+    if (!user) {
       throw new ClientError(401, 'invalid login');
-    } else {
-      // const payload = { userId, username };
-      // const signedToken = jwt.sign(payload, process.env.TOKEN_SECRET);
     }
+    const { userId, hashedPassword } = user;
+    if (!await argon2.verify(hashedPassword, password)) {
+      throw new ClientError(401, 'invalid login');
+    }
+    const payload = { userId, username };
+    const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+    res.json({ token, user: payload });
   } catch (err) {
     next(err);
   }
