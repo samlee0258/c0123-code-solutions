@@ -18,6 +18,7 @@ export default function UploadForm() {
      * https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData
      * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_a_file
      */
+    // const url =
   }
 
   return (
