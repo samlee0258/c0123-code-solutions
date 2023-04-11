@@ -2,19 +2,19 @@ import { useState } from "react";
 
 export default function ValidatedInput() {
   const [password, setPassword] = useState('');
-  const [valid, setValid] = useState(false);
+  let valid = false;
 
   const validate = (e) => {
-    const trimmedValue = e.target.value;
-    setPassword(trimmedValue);
+    setPassword(e.target.value);
 
-    if (trimmedValue === '') {
-      setValid(false);
-    } else if (trimmedValue.length < 8) {
-      setValid(false);
+    if (e.target.value === '') {
+      valid = false;
+    } else if (e.target.value.length < 8) {
+      valid = false;
     } else {
-      setValid(true);
+      valid = true;
     }
+    return valid;
   }
 
   return (
